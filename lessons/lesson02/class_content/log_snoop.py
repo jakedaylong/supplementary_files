@@ -1,6 +1,7 @@
 # pip install loguru
 
 from loguru import logger
+import pysnooper
 
 
 class Memoize:
@@ -9,6 +10,7 @@ class Memoize:
         self.fn = fn
         self.memo = {}
 
+    @pysnooper.snoop()
     def __call__(self, *args):
         if args not in self.memo:
             logger.info(f"memoizing {args}")
