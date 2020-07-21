@@ -25,18 +25,16 @@ def oo(employees):
 
 
 def fp(emps):
-    happies = fp1(emps, adjust)
-    fp2(happies)
+    happies = apply(emps, adjust)
+    report(happies)
 
 
-def fp1(employees, adjustment):
-    happier_employees = []
-    for employee in employees:
-        happier_employees.append((employee[0], adjustment(employee[1], 200)))
-    return happier_employees
+def apply(employees, adjustment):
+    return [(employee[0], adjustment(employee[1], 200)) for employee in
+            employees]
 
 
-def fp2(employees):
+def report(employees):
     for employee in employees:
         print(f"fp {employee[0]} makes {employee[1]}")
 
