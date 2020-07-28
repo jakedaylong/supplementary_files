@@ -16,13 +16,13 @@ def do_not_decorate(a):
     return a
 
 
-if use_decorator == False:
+if use_decorator is False:
     DevDecorator = do_not_decorate
 
 
 @DevDecorator
-def CoreFunction():
+def coreFunction():
     print("CoreFunction runs with conditional decoration")
 
 
-CoreFunction()
+coreFunction()

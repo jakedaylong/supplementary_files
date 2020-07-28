@@ -11,9 +11,11 @@ def log_me(func):
         return func(a, b)
     return inner
 
+
 @log_me
 def calculate_amount(premium, interest):
     return premium * interest
+
 
 amount = calculate_amount(120, 1.10)
 print(f"\nAmount is {amount}")

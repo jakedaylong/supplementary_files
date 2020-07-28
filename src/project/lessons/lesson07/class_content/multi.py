@@ -1,7 +1,6 @@
 from multiprocessing import Pool
 import functools
 import time
-import csv
 
 
 def time_me(func):
@@ -55,22 +54,6 @@ def do_serial(runs):
 
 
 @time_me
-def save_serial(results, header, footer):
-    counter = 0
-    for result_set in results:
-        for file in result_set:
-            counter += 1
-            with open('res' + str(counter) + '.txt', 'w') as csvfile:
-                writer = csv.writer(csvfile)
-                writer.writerow([header, file, footer])
-
-
-@time_me
-def save_parallel(results, header, footer):
-    pass
-
-
-@time_me
 def main():
     ranges = ((10, 12, 5, 7, 4, 3, 2), (35, 30, 25, 40), (40, 38, 42))
     parallel = []
@@ -78,14 +61,6 @@ def main():
     for number_set in ranges:
         parallel.append(do_parallel(number_set))
         serial.append(do_serial(number_set))
-
-    header = "h" * 100000000
-    footer = "f" * 100000000
-
-    parallel = parallel[0]
-    serial = serial[0]
-    save_serial(serial, header, footer)
-    save_parallel(parallel, header, footer)
 
 
 if __name__ == "__main__":
