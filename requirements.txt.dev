@@ -1,9 +1,0 @@
-pytest
-pytest-cov
-pytest-mock
-pytest-bdd
-pysnooper
-tox
-mypy
-pylint
-
