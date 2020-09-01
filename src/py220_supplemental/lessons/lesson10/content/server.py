@@ -16,12 +16,8 @@ class Employees(Resource):
 class Tracks(Resource):
     def get(self):
         conn = db_connect.connect()
-        query = conn.execute(
-            "select trackid, name, composer, unitprice from tracks;"
-        )
-        result = {
-            "data": [dict(zip(tuple(query.keys()), i)) for i in query.cursor]
-        }
+        query = conn.execute("select trackid, name, composer, unitprice from tracks;")
+        result = {"data": [dict(zip(tuple(query.keys()), i)) for i in query.cursor]}
         conn.close()
         return jsonify(result)
 
@@ -32,9 +28,7 @@ class Employees_Name(Resource):
         query = conn.execute(
             "select * from employees where EmployeeId =%d " % int(employee_id)
         )
-        result = {
-            "data": [dict(zip(tuple(query.keys()), i)) for i in query.cursor]
-        }
+        result = {"data": [dict(zip(tuple(query.keys()), i)) for i in query.cursor]}
         conn.close()
         return jsonify(result)
 
