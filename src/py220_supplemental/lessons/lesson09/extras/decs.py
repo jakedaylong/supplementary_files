@@ -27,4 +27,4 @@ class Store:
 
 
 s = Store()
-s.get_food("andy", "curry")
+s.get_food("admin", "curry")

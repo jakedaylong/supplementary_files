@@ -13,7 +13,7 @@ class Car(object):
             raise ValueError("Value cannot be negative")
 
 
-c = Car("red")
+c = Car("red", 90)
 print(c.speed)
 print(c.color)
 
