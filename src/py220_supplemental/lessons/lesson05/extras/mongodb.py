@@ -5,7 +5,6 @@ data
 data/db
 data/logpython
 
-must use 127.0.0.1 on windows
 pip install pymongo
 
 """

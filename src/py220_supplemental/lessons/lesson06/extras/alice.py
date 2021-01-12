@@ -1,5 +1,6 @@
 """
 performance analysis
+try with and without speedy decorator and compare!!
 """
 import functools
 import time
