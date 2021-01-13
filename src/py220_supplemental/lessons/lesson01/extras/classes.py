@@ -8,6 +8,7 @@ class Employee:
     def __init__(self, name, salary):
         self.name = name
         self.salary = salary
+        self.employee_job = None
 
     def change_salary(self, amt):
         """ change salary takes an increment (not a new salary)"""
@@ -17,8 +18,8 @@ class Employee:
         print(f"Employee {self.name} makes {self.salary}")
 
     def hire(self, job_title):
-        employee_job = Job(job_title, self.name)
-        employee_job.describe()
+        self.employee_job = Job(job_title, self.name)
+        self.employee_job.describe()
 
 
 class Job:
