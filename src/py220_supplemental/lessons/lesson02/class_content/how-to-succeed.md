@@ -1,4 +1,4 @@
-#How to get the most out of this class
+# How to get the most out of this class
 
 My opinion from experience:
 
