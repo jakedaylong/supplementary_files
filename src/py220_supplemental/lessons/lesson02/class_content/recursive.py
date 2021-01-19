@@ -1,5 +1,5 @@
 """
-recursion for debuging
+recursion
 """
 
 
@@ -12,3 +12,11 @@ def my_fun(n):
 if __name__ == '__main__':
     n = 100
     print(my_fun(n))
+
+
+"""
+        ---^|v
+    ---^|v
+---^|v
+
+"""

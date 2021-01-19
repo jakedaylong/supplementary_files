@@ -3,7 +3,7 @@
 from loguru import logger
 import pysnooper
 
-# logger.remove()  # eliminate default to add our own
+#logger.remove()  # eliminate default to add our own
 
 
 class Memoize:
