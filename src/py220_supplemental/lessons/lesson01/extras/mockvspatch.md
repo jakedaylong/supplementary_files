@@ -1,6 +1,6 @@
 # Testing
 
-##What are mocks? ?
+## What are mocks? ?
 
 Mock is a category of so-called test doubles – objects that mimic the
 behaviour of other objects. They are meant to be used in tests to replace
