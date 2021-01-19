@@ -1,5 +1,10 @@
 import pathlib
 
+# on windows you can use raw strings to prevent esc issues with \
+new_file = r'c:\workspace\andy.txt'
+
+# but there are better ways...
+
 cwd = pathlib.Path.cwd()
 
 print('cwd = ', cwd)
@@ -7,11 +12,6 @@ print('cwd = ', cwd)
 # in unix returns /mnt/c/workspace
 
 print('cwd parent', cwd.parent)
-
-# on windows use raw strings to prevent esc issues with \
-
-new_file = r'c:\workspace\andy.txt'
-
 
 myfile = pathlib.Path.home() / 'test' / 'test.txt'
 print("myfile is ", myfile)

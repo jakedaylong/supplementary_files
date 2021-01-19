@@ -1,5 +1,7 @@
+from typing import Callable
 
-def proc_nums(func, parm1, parm2):
+
+def proc_nums(func: Callable, parm1: int, parm2: int) -> Callable:
     # todo Name this better?
     return func(parm1, parm2)
 

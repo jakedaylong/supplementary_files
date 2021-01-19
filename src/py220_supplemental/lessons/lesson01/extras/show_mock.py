@@ -1,17 +1,31 @@
-from unittest.mock import patch
-import time
+import datetime
+from unittest.mock import Mock
+
+# Save a couple of test days
+tuesday = datetime.datetime(year=2019, month=1, day=1)
+saturday = datetime.datetime(year=2019, month=1, day=5)
+
+print(f"before mock datetime.datetime is {type(datetime.datetime)}")
+
+# Mock datetime to control today's date
+datetime = Mock()
+print(f"after mock datetime.datetime is {type(datetime.datetime)}")
 
 
-def complex_function():
-    time.sleep(99999)
-    return "abc"
+def is_weekday():
+    today = datetime.datetime.today()
+    print(f"in is_weekday() datetime.datetime is {type(datetime.datetime)}")
+    # Python's datetime library treats Monday as 0 and Sunday as 6
+    return (0 <= today.weekday() < 5)
 
 
-def function_a():
-    return complex_function().upper()
+# Mock .today() to return Tuesday
+datetime.datetime.today.return_value = tuesday
 
+# Test Tuesday is a weekday
+assert is_weekday()
+# Mock .today() to return Saturday
 
-def test_function_a():
-    with patch("show_mock.complex_function") as complex_function_mock:
-        complex_function_mock.return_value = "foo"
-        assert function_a() == "FOO"
+datetime.datetime.today.return_value = saturday
+# Test Saturday is not a weekday
+assert not is_weekday()
