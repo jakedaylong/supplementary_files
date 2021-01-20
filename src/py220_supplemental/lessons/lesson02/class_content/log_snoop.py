@@ -3,8 +3,7 @@
 from loguru import logger
 import pysnooper
 
-#logger.remove()  # eliminate default to add our own
-
+logger.remove()  # eliminate default to add our own
 
 class Memoize:
 
@@ -19,6 +18,7 @@ class Memoize:
             self.memo[args] = self.fn(*args)
         else:
             logger.info(f"args are in {args}")
+
         return self.memo[args]
 
 
@@ -34,9 +34,9 @@ def fib(n):
 
 def main():
     fib(10)
-    fib(30)
+    fib(35)
     fib(20)
-    fib(10)
+    fib(11)
 
 
 if __name__ == "__main__":

@@ -13,8 +13,11 @@ print(f"after mock datetime.datetime is {type(datetime.datetime)}")
 
 
 def is_weekday():
+    # this next line uses the mocked return value set on lines 24 then 30
     today = datetime.datetime.today()
     print(f"in is_weekday() datetime.datetime is {type(datetime.datetime)}")
+    print("here are its properties:")
+    print(dir(today))
     # Python's datetime library treats Monday as 0 and Sunday as 6
     return (0 <= today.weekday() < 5)
 

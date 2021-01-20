@@ -9,7 +9,7 @@ cwd = pathlib.Path.cwd()
 
 print('cwd = ', cwd)
 # in windows returns C:\workspace
-# in unix returns /mnt/c/workspace
+# in unix returns /mnt/c/workspace or say /home/andy/workspace
 
 print('cwd parent', cwd.parent)
 

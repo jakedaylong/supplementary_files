@@ -5,8 +5,8 @@ recursion
 
 def my_fun(n):
     if n <= 1:
-        return True
-    return my_fun(n / 2)
+        return n
+    return n + my_fun(n / 2)
 
 
 if __name__ == '__main__':
